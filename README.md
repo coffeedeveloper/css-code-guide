@@ -99,6 +99,21 @@
   }
   ```
 
+- 设置1以下的属性值时，直接用`.x`，不需要带`0`
+
+  ```css
+  /*错误示范*/
+  .a {
+    opacity: 0.3;
+    transition: opacity 0.8s;
+  }
+  /*正确示范*/
+  .a {
+    opacity: .3;
+    transition: opacity .8s;
+  }
+  ```
+
 - 如果想覆盖或修改属性某个方位的值，应该用指定方位的属性名
   - 例子：某个类名为a的段落，增加顶部内边距
 
@@ -116,3 +131,23 @@
       padding-top: 10px;
     }
     ```
+
+## 兼容性
+
+- 针对浏览器差异性的代码，应该用[Autoprefixer](https://github.com/postcss/autoprefixer)来做
+  - [Autoprefixer - github](https://github.com/postcss/autoprefixer)
+  - [gulp-autoprefixer](https://github.com/sindresorhus/gulp-autoprefixer)
+
+  ```css
+  /*错误示范*/
+  .a {
+    width: 100px;
+    -webkit-transition: width .5s;
+    transition: width .5s;
+  }
+  /*正确示范*/
+  .a {
+    width: 100px;
+    transition: width .5s;
+  }
+  ```
