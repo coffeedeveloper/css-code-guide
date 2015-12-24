@@ -13,19 +13,19 @@
 ```css
 /*错误示范*/
 .a {
-
+  text-align: center;
 }
 .b {
-
+  text-align: center;
 }
 
 /*正确示范*/
 .a {
-
+  text-align: center;
 }
 
 .b {
-
+  text-align: center;
 }
 ```
 
